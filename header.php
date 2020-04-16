@@ -48,7 +48,8 @@ $bIncludedModule = (\Bitrix\Main\Loader::includeModule("aspro.next"));?>
 		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ2WVH4"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe>
 	</noscript>
-	<?if(!$bIncludedModule):?>
+
+	<?if(!$bIncludedModule):?>	<!-- проверяет, подключен ли модуль aspro.next -->
 		<?$APPLICATION->SetTitle(GetMessage("ERROR_INCLUDE_MODULE_ASPRO_NEXT_TITLE"));?>
 		<center><?$APPLICATION->IncludeFile(SITE_DIR."include/error_include_module.php");?></center>
 		</body>
@@ -61,11 +62,11 @@ $bIncludedModule = (\Bitrix\Main\Loader::includeModule("aspro.next"));?>
 	//if (hasDev()) pr($arTheme);
     include_once('defines.php');
 	CNext::SetJSOptions();
-	if($APPLICATION->GetCurPage()=="/"):?>
+	if($APPLICATION->GetCurPage()=="/"):?>	<!-- если главная страница -->
 	<div class="maxwidth-custom_banner">
     	<div class="custom_banner">
 			<div class="banner_text">
-				<?$APPLICATION->IncludeFile(SITE_DIR."include/banner_text.php");?>		
+				<?$APPLICATION->IncludeFile(SITE_DIR."include/banner_text.php");?>	<!-- текст вверху сайта -->		
 			</div>
     	</div>
     </div>
