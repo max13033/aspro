@@ -7057,3 +7057,12 @@ a.btnnew{color: white;}
 .product-item-image-alternative{
 	opacity: 1;
 }
+/*			===========		custom from Max 	===================		*/
+/*.catalog-top.bx-blue{
+	margin-bottom: 150px;
+}
+*/
+.col-xs-6:hover{
+	margin-bottom: 150px;
+}
+
