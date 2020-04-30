@@ -35,7 +35,7 @@ $bIncludedModule = (\Bitrix\Main\Loader::includeModule("aspro.next"));?>
 	<meta name="google-site-verification" content="kZ0NVBESEMnKoLQKCNL2litXLIHZNP3pMZaGW76-IlI" />
     </head>
 <body class="<?=($bIncludedModule ? "fill_bg_".strtolower(CNext::GetFrontParametrValue("SHOW_BG_BLOCK")) : "");?>" id="main">
-    <div id="white-curtain">Загрузка...</div>		<!-- ??? -->
+    <!-- <div id="white-curtain">Загрузка...</div> -->		<!-- ??? -->
 	<div id="panel">	<?$APPLICATION->ShowPanel();?>	</div>	<!-- показывает админ панель Битрикса -->
 	
 	<noscript>
@@ -58,11 +58,7 @@ $bIncludedModule = (\Bitrix\Main\Loader::includeModule("aspro.next"));?>
 	CNext::SetJSOptions();
 	if($APPLICATION->GetCurPage()=="/"):?>
 	<div class="maxwidth-custom_banner"> 	<!-- текст вверху сайта на синем фоне -->
-    	<div class="custom_banner">
-			<div class="banner_text">
-				<?$APPLICATION->IncludeFile(SITE_DIR."include/banner_text.php");?>		
-			</div>
-    	</div>
+		<h1 class="title-h1-main">Официальный интернет-дискаунтер  ·  стройка и ремонт  ·  дизайн интерьера и экстерьера  ·  товары для дома</h1>
     </div>
 	<?endif;?>
 	<div class="wrapper1 <?=($isIndex && $isShowIndexLeftBlock ? "with_left_block" : "");?> <?=CNext::getCurrentPageClass();?> <?=CNext::getCurrentThemeClasses();?>">

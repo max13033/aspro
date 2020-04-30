@@ -140,7 +140,14 @@ ul.menu li a {
 
 .custom_banner {padding: 0px; height: 35px; }
 /*.banner_text {padding: 10px 0px;}*/
-.maxwidth-custom_banner {background: #003595 !important; max-width: none;}
+.maxwidth-custom_banner {
+    background: #003595 !important; 
+    max-width: none;
+    height: 35px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
 .wrapper1 {margin-top: 2px;}
 
 
