@@ -31,9 +31,9 @@ $bIncludedModule = (\Bitrix\Main\Loader::includeModule("aspro.next"));?>
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-TJ2WVH4');
 	</script>
-
 	<meta name="google-site-verification" content="kZ0NVBESEMnKoLQKCNL2litXLIHZNP3pMZaGW76-IlI" />
-    </head>
+</head>
+
 <body class="<?=($bIncludedModule ? "fill_bg_".strtolower(CNext::GetFrontParametrValue("SHOW_BG_BLOCK")) : "");?>" id="main">
     <!-- <div id="white-curtain">Загрузка...</div> -->		<!-- ??? -->
 	<div id="panel">	<?$APPLICATION->ShowPanel();?>	</div>	<!-- показывает админ панель Битрикса -->
