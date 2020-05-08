@@ -1165,8 +1165,9 @@ body .soc-avt .row a{border-radius:0px;}
 .soc-avt .row a i{display: block;width: 35px;height: 35px;background-repeat: no-repeat;border-bottom: none;}
 .social-icons li a:hover, .soc-avt .row a:hover{opacity:0.8;}
 body .soc-avt .row a{display:inline-block;margin: 5px 11px 5px 0px;}
-.social-icons li.facebook a, .soc-avt a i.facebook{background-position:-54px -4px;}
-.social-icons li.twitter a, .soc-avt a i.twitter{background-position:-104px -4px;}
+.social-icons li.facebook a
+/*.soc-avt a i.facebook*/{background-position:-54px -4px;}
+.social-icons li.twitter a /*.soc-avt a i.twitter*/{background-position:-104px -4px;}
 .social-icons li.instagram a, .soc-avt a i.instagram{background-position:-154px -4px;}
 .social-icons li.telegram a, .soc-avt a i.telegram{background-position:-153px -104px;}
 .social-icons li.ytb a, .soc-avt a i.ytb{background-position:-204px -4px;}
@@ -3068,22 +3069,57 @@ body .bx_catalog_item_scu .bx_item_detail_scu ul li.active span.cnt1, body .bx_c
 .auth_wrapp .form-footer .register{margin: 0px;}
 .auth_wrapp .form-footer .more_text_small{padding-left:25px;color:#999999;font-size:0.800em;line-height: 1.5em;}
 
-.soc-avt .row a i.soc-icon.odnoklassniki, .soc-serv-main .row a i.soc-icon.odnoklassniki, .bx-authform-social ul li .bx-authform-social-icon.odnoklassniki {background-image: url(images/svg/au_o.svg);}
+.reg-new .soc-avt .row a i.soc-icon.odnoklassniki, 
+.soc-avt .row a i.soc-icon.odnoklassniki, 
+.soc-serv-main .row a i.soc-icon.odnoklassniki, 
+.bx-authform-social ul li .bx-authform-social-icon.odnoklassniki {background-image: url(images/svg/au_o.svg);}
+
 .catalog_detail .b-share .b-share-btn__odnoklassniki span{background-position:-42px -2px;}
 
 .soc-avt .row a i.soc-icon.liveid, .soc-serv-main .row a i.soc-icon.liveid{background-position:-304px -4px;}
-.soc-avt .row a i.soc-icon.google, .soc-serv-main .row a i.soc-icon.google, .bx-authform-social ul li .bx-authform-social-icon.google{background-image: url(images/svg/au_g.svg);}
-.soc-avt .row a i.soc-icon.google-plus, .soc-serv-main .row a i.soc-icon.google-plus, .bx-authform-social ul li .bx-authform-social-icon.google-plus{background-image: url(images/svg/au_g.svg);}
-.soc-avt .row a i.soc-icon.vkontakte, .soc-serv-main .row a i.soc-icon.vkontakte, .bx-authform-social ul li .bx-authform-social-icon.vkontakte{background-image: url(images/svg/au_vk.svg);}
-.soc-avt .row a i.soc-icon.mailru2, .soc-serv-main .row a i.soc-icon.mailru2, .bx-authform-social ul li .bx-authform-social-icon.mailru2{background-image: url(images/svg/au_mail.svg);}
+.reg-new .soc-avt .row a i.soc-icon.google, 
+.soc-avt .row a i.soc-icon.google, 
+.soc-serv-main .row a i.soc-icon.google, 
+.bx-authform-social ul li .bx-authform-social-icon.google{background-image: url(images/svg/au_g.svg);}
+
+.reg-new .soc-avt .row a i.soc-icon.google-plus,
+.soc-avt .row a i.soc-icon.google-plus, 
+.soc-serv-main .row a i.soc-icon.google-plus, 
+.bx-authform-social ul li .bx-authform-social-icon.google-plus{background-image: url(images/svg/au_g.svg);}
+
+.reg-new .soc-avt .row a i.soc-icon.vkontakte, 
+.soc-avt .row a i.soc-icon.vkontakte,
+.soc-serv-main .row a i.soc-icon.vkontakte, 
+.bx-authform-social ul li .bx-authform-social-icon.vkontakte{background-image: url(images/svg/au_vk.svg);}
+
+.reg-new .soc-avt .row a i.soc-icon.mailru2, 
+.soc-avt .row a i.soc-icon.mailru2,
+.soc-serv-main .row a i.soc-icon.mailru2, 
+.bx-authform-social ul li .bx-authform-social-icon.mailru2{background-image: url(images/svg/au_mail.svg);}
+
 .catalog_detail .b-share .b-share-btn__moimir span{background-position:-122px -2px;}
-.soc-avt .row a i.soc-icon.twitter, .soc-serv-main .row a i.soc-icon.twitter, .bx-authform-social ul li .bx-authform-social-icon.twitter{background-image: url(images/svg/au_t.svg);}
+.reg-new .soc-avt .row a i.soc-icon.twitter, 
+.soc-avt .row a i.soc-icon.twitter,
+.soc-serv-main .row a i.soc-icon.twitter, .bx-authform-social ul li .bx-authform-social-icon.twitter{background-image: url(images/svg/au_t.svg);}
+
 .catalog_detail .b-share .b-share-btn__twitter span{background-position:-2px -42px;}
-.soc-avt .row a i.soc-icon.facebook, .soc-serv-main .row a i.soc-icon.facebook, .bx-authform-social ul li .bx-authform-social-icon.facebook{background-image: url(images/svg/au_f.svg);}
+.reg-new .soc-avt .row a i.soc-icon.facebook,
+.soc-avt .row a i.soc-icon.facebook,
+.soc-serv-main .row a i.soc-icon.facebook, 
+.bx-authform-social ul li .bx-authform-social-icon.facebook{background-image: url(images/svg/au_f.svg);}
+
 .catalog_detail .b-share .b-share-btn__facebook span{background-position:-82px -2px;}
 .soc-avt .row a i.soc-icon.livejournal, .soc-serv-main .row a i.soc-icon.livejournal, .bx-authform-social ul li .bx-authform-social-icon.livejournal{background-position:-104px -54px;}
-.soc-avt .row a i.soc-icon.yandex, .soc-serv-main .row a i.soc-icon.yandex, .bx-authform-social ul li .bx-authform-social-icon.yandex{background-image: url(images/svg/au_ya.svg);}
-.soc-avt .row a i.soc-icon.openid-mail-ru, .soc-serv-main .row a i.soc-icon.openid-mail-ru, .bx-authform-social ul li .bx-authform-social-icon.openid-mail-ru{background-image: url(images/svg/au_mail.svg);}
+.reg-new .soc-avt .row a i.soc-icon.yandex,
+.soc-avt .row a i.soc-icon.yandex, 
+.soc-serv-main .row a i.soc-icon.yandex, 
+.bx-authform-social ul li .bx-authform-social-icon.yandex{background-image: url(images/svg/au_ya.svg);}
+
+.reg-new .soc-avt .row a i.soc-icon.openid-mail-ru, 
+.soc-avt .row a i.soc-icon.openid-mail-ru,
+.soc-serv-main .row a i.soc-icon.openid-mail-ru, 
+.bx-authform-social ul li .bx-authform-social-icon.openid-mail-ru{background-image: url(images/svg/au_mail.svg);}
+
 .soc-avt .row a i.soc-icon.liveinternet, .soc-serv-main .row a i.soc-icon.liveinternet, .bx-authform-social ul li .bx-authform-social-icon.liveinternet{background-position:-353px -54px;}
 .soc-avt .row a i.soc-icon.blogger, .soc-serv-main .row a i.soc-icon.blogger, .bx-authform-social ul li .bx-authform-social-icon.blogger{background-position:-203px -54px;}
 .soc-avt a i.openid, .soc-serv-main .row a i.soc-icon.openid, .bx-authform-social ul li .bx-authform-social-icon.openid{background-position: -302px -54px;}
