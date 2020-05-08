@@ -1160,10 +1160,11 @@ footer .info + .social{margin-top:-38px;}
 body .social-icons li, body .soc-avt .row a{display:inline-block;vertical-align:top;*display:inline;zoom:1;padding:0px;margin:0px;}
 .social-icons li:before{display:none;}
 .social-icons li a, .soc-avt .row a{border-radius:3px;display:block;height:40px;margin: 5px 10px 5px 0px;overflow:hidden;position:relative;transition:all 0.3s ease 0s;width:40px;transition:all 0.3s ease;-moz-transition:all 0.3s ease;-ms-transition:all 0.3s ease;-o-transition:all 0.3s ease;-webkit-transition:all 0.3s ease;font-size:0;background: none;border-radius:100%;}
-body .soc-avt .row a{border-radius:0px;}
+body .soc-avt .row a{border-radius:0px;opacity: 0.7}
 .social-icons li a{background-color:#4f5a6b;background:url(images/social.png) -4px -4px no-repeat;}
 .soc-avt .row a i{display: block;width: 35px;height: 35px;background-repeat: no-repeat;border-bottom: none;}
-.social-icons li a:hover, .soc-avt .row a:hover{opacity:0.8;}
+.social-icons li a:hover{opacity:0.8;}
+.soc-avt .row a:hover{opacity:1;}
 body .soc-avt .row a{display:inline-block;margin: 5px 11px 5px 0px;}
 .social-icons li.facebook a
 /*.soc-avt a i.facebook*/{background-position:-54px -4px;}
