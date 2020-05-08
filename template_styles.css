@@ -1161,18 +1161,18 @@ body .social-icons li, body .soc-avt .row a{display:inline-block;vertical-align:
 .social-icons li:before{display:none;}
 .social-icons li a, .soc-avt .row a{border-radius:3px;display:block;height:40px;margin: 5px 10px 5px 0px;overflow:hidden;position:relative;transition:all 0.3s ease 0s;width:40px;transition:all 0.3s ease;-moz-transition:all 0.3s ease;-ms-transition:all 0.3s ease;-o-transition:all 0.3s ease;-webkit-transition:all 0.3s ease;font-size:0;background: none;border-radius:100%;}
 body .soc-avt .row a{border-radius:0px;}
-/*.social-icons li a{background-color:#4f5a6b;background:url(images/social.png) -4px -4px no-repeat;}*/
+.social-icons li a{background-color:#4f5a6b;background:url(images/social.png) -4px -4px no-repeat;}
 .soc-avt .row a i{display: block;width: 35px;height: 35px;background-repeat: no-repeat;border-bottom: none;}
 .social-icons li a:hover, .soc-avt .row a:hover{opacity:0.8;}
 body .soc-avt .row a{display:inline-block;margin: 5px 11px 5px 0px;}
-/*.social-icons li.facebook a, .soc-avt a i.facebook{background-position:-54px -4px;}
+.social-icons li.facebook a, .soc-avt a i.facebook{background-position:-54px -4px;}
 .social-icons li.twitter a, .soc-avt a i.twitter{background-position:-104px -4px;}
 .social-icons li.instagram a, .soc-avt a i.instagram{background-position:-154px -4px;}
 .social-icons li.telegram a, .soc-avt a i.telegram{background-position:-153px -104px;}
 .social-icons li.ytb a, .soc-avt a i.ytb{background-position:-204px -4px;}
 .social-icons li.odn a, .soc-avt a i.odn{background-position:-254px -4px;}
 .social-icons li.gplus a, .soc-avt a i.gplus{background-position:-54px -54px;}
-.social-icons li.mail a, .soc-avt a i.mymailru{background-position:-4px -54px;}*/
+.social-icons li.mail a, .soc-avt a i.mymailru{background-position:-4px -54px;}
 .soc-avt a i.openid-mail-ru{background-position:-400px 0px;}
 .soc-avt a i.livejournal{background-position:-100px -50px;}
 .soc-avt a i.liveinternet{background-position:-350px -50px;}
