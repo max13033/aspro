@@ -2296,7 +2296,7 @@ body .tabs_slider .catalog_item:hover .inner_wrap {border-color:#fff;box-shadow:
 
 .catalog_item .image_wrapper_block{margin:0px auto 10px;position:relative;}
 
-.stickers{left:0px;top:4px;position:absolute;z-index: 3;line-height: 20px;text-align: left;padding-right: 50px;font-size:0px;}
+.stickers{/*left:0px;*/top:4px;position:absolute;z-index: 3;line-height: 20px;text-align: left;/*padding-right: 50px;*/font-size:0px;}
 .stickers.stickers--main{
 	left: 0px;
 	top: 0px;
@@ -2332,7 +2332,7 @@ body .tabs_slider .catalog_item:hover .inner_wrap {border-color:#fff;box-shadow:
 .stickers .sticker_stock, .stickers .sticker_aktsiya{background-color:#FF0000;color: #FFFFFF;font-weight:bold;}
 .stickers .sticker_recommend, .stickers .sticker_sovetuem{background-color:#893ca9;}
 
-.item .stickers{left: 0px;}
+/*.item .stickers{left: 0px;}*/
 .display_list .item .stickers{top: 5px;left: 3px;}
 
 .catalog_item .cost.prices{margin:11px 0px 0px;line-height:0px;}
@@ -5733,7 +5733,7 @@ body .group-content .tab-pane:first-of-type h3{margin-top:0px;}
 .bx_item_list_you_looked_horizontal.detail .top_block{margin-bottom:0px;}
 .bx_item_list_you_looked_horizontal ul.slider_navigation.top_big {top: 19px;}
 
-.catalog_item .stickers{left:0px;}
+.catalog_item .stickers{right:0px;}
 
 /*basket*/
 body .bx_item_list_you_looked_horizontal{border-bottom-width:0px;}
@@ -7097,7 +7097,7 @@ a.btnnew{color: white;}
 	margin-bottom: 150px;
 }
 */
-.col-xs-6:hover{
+/*.col-xs-6:hover{
 	margin-bottom: 150px;
-}
+}*/
 
