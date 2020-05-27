@@ -997,24 +997,9 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
 					<a href="#descr" data-toggle="tab"><span><?=($arParams["TAB_DESCR_NAME"] ? $arParams["TAB_DESCR_NAME"] : GetMessage("DESCRIPTION_TAB"));?></span></a>
 				</li>
 			<?endif;?>
-				<li class="<?=(!($iTab++) ? ' active' : '')?>">
+			<li class="<?=(!($iTab++) ? ' active' : '')?>">
 					<a href="#charakteristik" data-toggle="tab"><span>Характеристики</span></a>
 				</li>
-			<?if($arVideo):?>
-				<li class="<?=(!($iTab++) ? ' active' : '')?>">
-					<a href="#video" data-toggle="tab">
-						<span><?=($arParams["TAB_VIDEO_NAME"] ? $arParams["TAB_VIDEO_NAME"] : GetMessage("VIDEO_TAB"));?></span>
-						<?if(count($arVideo) > 1):?>
-							<span class="count empty">&nbsp;(<?=count($arVideo)?>)</span>
-						<?endif;?>
-					</a>
-				</li>
-			<?endif;?>	
-			<?if($arParams["USE_REVIEW"] == "Y"):?>
-				<li class="product_reviews_tab<?=(!($iTab++) ? ' active' : '')?>">
-					<a href="#review" data-toggle="tab"><span><?=($arParams["TAB_REVIEW_NAME"] ? $arParams["TAB_REVIEW_NAME"] : GetMessage("REVIEW_TAB"))?></span><span class="count empty"></span></a>
-				</li>
-			<?endif;?>
 			<?if($arParams["SHOW_HOW_BUY"] == "Y"):?>
 				<li class="<?=(!($iTab++) ? ' active' : '')?>">
 					<a href="#hbuy" data-toggle="tab"><span><?=$arParams["TITLE_HOW_BUY"];?></span></a>
@@ -1028,6 +1013,21 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
 			<?if($arParams["SHOW_DELIVERY"] == "Y"):?>
 				<li class="<?=(!($iTab++) ? ' active' : '')?>">
 					<a href="#delivery" data-toggle="tab"><span><?=$arParams["TITLE_DELIVERY"];?></span></a>
+				</li>
+			<?endif;?>
+			<?if($arVideo):?>
+				<li class="<?=(!($iTab++) ? ' active' : '')?>">
+					<a href="#video" data-toggle="tab">
+						<span><?=($arParams["TAB_VIDEO_NAME"] ? $arParams["TAB_VIDEO_NAME"] : GetMessage("VIDEO_TAB"));?></span>
+						<?if(count($arVideo) > 1):?>
+							<span class="count empty">&nbsp;(<?=count($arVideo)?>)</span>
+						<?endif;?>
+					</a>
+				</li>
+			<?endif;?>
+			<?if($arParams["USE_REVIEW"] == "Y"):?>
+				<li class="product_reviews_tab<?=(!($iTab++) ? ' active' : '')?>">
+					<a href="#review" data-toggle="tab"><span><?=($arParams["TAB_REVIEW_NAME"] ? $arParams["TAB_REVIEW_NAME"] : GetMessage("REVIEW_TAB"))?></span><span class="count empty"></span></a>
 				</li>
 			<?endif;?>
 			<?if(($arParams["SHOW_ASK_BLOCK"] == "Y") && (intVal($arParams["ASK_FORM_ID"]))):?>
