@@ -5305,6 +5305,7 @@ $(document).ready(function(){
 
 	$(document).on('click', '.reviews-collapse-link', function(){
 		$('.reviews-reply-form').slideToggle();
+		$(this).fadeOut();
 	})
 
 	/* accordion action*/
