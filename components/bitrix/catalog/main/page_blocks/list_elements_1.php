@@ -281,8 +281,6 @@ if ($isAjaxFilter == "Y")
             <div class="ajax_load <?= $display; ?>">
                 <? }
                 ?>
-
-
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:catalog.section",
                     $template,

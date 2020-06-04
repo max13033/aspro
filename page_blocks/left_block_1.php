@@ -9,7 +9,8 @@
 
 <?endif?>
 
-<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+<?/*
+$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
 	"COMPONENT_TEMPLATE" => ".default",
 		"PATH" => SITE_DIR."include/left_block/menu.left_menu.php",
 		"AREA_FILE_SHOW" => "file",
@@ -21,7 +22,9 @@
 	array(
 	"ACTIVE_COMPONENT" => "Y"
 	)
-);?>
+);
+*/
+?>
 
 <?$APPLICATION->ShowViewContent('left_menu');?>
 <?$APPLICATION->ShowViewContent('under_sidebar_content');?>
@@ -44,21 +47,23 @@
 	"ACTIVE_COMPONENT" => "N"
 	)
 );?>
-<?$APPLICATION->IncludeComponent("bitrix:main.include", "front", array(
+<?
+$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
 	"COMPONENT_TEMPLATE" => "front",
-		"PATH" => SITE_DIR."include/left_block/comp_news.php",
-		"AREA_FILE_SHOW" => "file",
-		"AREA_FILE_SUFFIX" => "",
-		"AREA_FILE_RECURSIVE" => "Y",
-		"EDIT_TEMPLATE" => "include_area.php",
-		"COMPOSITE_FRAME_MODE" => "A",
-		"COMPOSITE_FRAME_TYPE" => "AUTO"
-	),
+	"PATH" => SITE_DIR."include/left_block/comp_news.php",
+	"AREA_FILE_SHOW" => "file",
+	"AREA_FILE_SUFFIX" => "",
+	"AREA_FILE_RECURSIVE" => "Y",
+	"EDIT_TEMPLATE" => "include_area.php",
+	"COMPOSITE_FRAME_MODE" => "A",
+	"COMPOSITE_FRAME_TYPE" => "AUTO"
+),
 	false,
 	array(
-	"ACTIVE_COMPONENT" => "N"
+		"ACTIVE_COMPONENT" => "Y"
 	)
-);?>
+);
+?>
 <?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
 	"COMPONENT_TEMPLATE" => ".default",
 		"PATH" => SITE_DIR."include/left_block/comp_news_articles.php",

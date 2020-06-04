@@ -5429,12 +5429,21 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 
 			if (currentDelivery.PERIOD_TEXT && currentDelivery.PERIOD_TEXT.length)
 			{
-				period = BX.create('LI', {
-					children: [
-						BX.create('DIV', {props: {className: 'bx-soa-pp-list-termin'}, html: this.params.MESS_PERIOD + ':'}),
-						BX.create('DIV', {props: {className: 'bx-soa-pp-list-description'}, html: currentDelivery.PERIOD_TEXT})
-					]
-				});
+				if(subTitle.innerHTML == 'Самовывоз') {
+                    period = BX.create('LI', {
+                        children: [
+                            BX.create('DIV', {props: {className: 'bx-soa-pp-list-termin'}, html: 'Самовывоз доступен через 4 дня'}),
+                            //BX.create('DIV', {props: {className: 'bx-soa-pp-list-description'}, html: currentDelivery.PERIOD_TEXT})
+                        ]
+                    });
+                } else {
+                    period = BX.create('LI', {
+                        children: [
+                            BX.create('DIV', {props: {className: 'bx-soa-pp-list-termin'}, html: this.params.MESS_PERIOD + ':'}),
+                            BX.create('DIV', {props: {className: 'bx-soa-pp-list-description'}, html: currentDelivery.PERIOD_TEXT})
+                        ]
+                    });
+				}
 			}
 
 			clear = BX.create('DIV', {style: {clear: 'both'}});

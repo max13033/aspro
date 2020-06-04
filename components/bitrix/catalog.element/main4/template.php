@@ -1559,7 +1559,10 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
 			<?endif;?>
 			<?if($arParams["USE_REVIEW"] == "Y"):?>
 				<div class="tab-pane <?=(!($iTab++) ? 'active' : '')?> wrap_inner_review" id="review">
-					<div class="title-tab-heading visible-xs product_reviews_tab "><?=($arParams["TAB_REVIEW_NAME"] ? $arParams["TAB_REVIEW_NAME"] : GetMessage("REVIEW_TAB"))?><span class="count empty"></span></div>
+					<div class="title-tab-heading visible-xs product_reviews_tab ">
+						<?=($arParams["TAB_REVIEW_NAME"] ? $arParams["TAB_REVIEW_NAME"] : GetMessage("REVIEW_TAB"))?>
+						<span class="count empty"></span>
+					</div>
 					<div class="js_inner"></div>
 				</div>
 			<?endif;?>

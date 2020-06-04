@@ -88,19 +88,22 @@
 	)
 );?>
 							<div class="social-block rounded_block">
-								<?$APPLICATION->IncludeComponent("aspro:social.info.next", "top1", Array(
-	"CACHE_TYPE" => "A",	// Тип кеширования
-		"CACHE_TIME" => "3600000",	// Время кеширования (сек.)
-		"CACHE_GROUPS" => "N",	// Учитывать права доступа
-		"COMPONENT_TEMPLATE" => "top",
+								<?$APPLICATION->IncludeComponent(
+	"aspro:social.info.next", 
+	"top1", 
+	array(
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600000",
+		"CACHE_GROUPS" => "N",
+		"COMPONENT_TEMPLATE" => "top1",
 		"SOCIAL_TITLE" => GetMessage("SOCIAL_TITLE"),
-		"TITLE_BLOCK" => "",	// Заголовок блока
-		"COMPOSITE_FRAME_MODE" => "A",	// Голосование шаблона компонента по умолчанию
-		"COMPOSITE_FRAME_TYPE" => "AUTO",	// Содержимое компонента
+		"TITLE_BLOCK" => "",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
 	),
 	false,
 	array(
-	"ACTIVE_COMPONENT" => "Y"
+		"ACTIVE_COMPONENT" => "Y"
 	)
 );?>
 							</div>

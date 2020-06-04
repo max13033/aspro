@@ -1,7 +1,9 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<script>
+    var bLazy = new Blazy();
+</script>
 
-
-
+<?
     // собираю товары по коллекциям в фильтре
     $smart_filter = $GLOBALS[$arParams["FILTER_NAME"]];
     $arCollections = Array();
@@ -310,7 +312,7 @@ global $arrFilterCollectionCustom;?>
 					elseif($arItem["OFFERS"]){
 						$strMeasure = $arItem["MIN_PRICE"]["CATALOG_MEASURE_NAME"];
 					}
-					
+
 					$elementName = ((isset($arItem['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $arItem['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) ? $arItem['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'] : $arItem['NAME']);
 					?>
 					<div class="catalog_item main_item_wrapper item_wrap <?=(($_GET['q'])) ? 's' : ''?>" id="<?=$arItemIDs["strMainID"];?>">
@@ -363,12 +365,12 @@ global $arrFilterCollectionCustom;?>
                                         $a_title = ($arItem["PREVIEW_PICTURE"] && strlen($arItem["PREVIEW_PICTURE"]['DESCRIPTION']) ? $arItem["PREVIEW_PICTURE"]['DESCRIPTION'] : ($arItem["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_TITLE"] ? $arItem["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_TITLE"] : $arItem["NAME"] ));
                                         ?>
                                         <?if( !empty($arItem["PREVIEW_PICTURE"]) ):?>
-                                            <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                            <img data-src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
                                         <?elseif( !empty($arItem["DETAIL_PICTURE"])):?>
                                             <?$img = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"], array( "width" => 170, "height" => 170 ), BX_RESIZE_IMAGE_PROPORTIONAL,true );?>
-                                            <img src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                            <img data-src="<?=$img["src"]?>" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" clss="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
                                         <?else:?>
-                                            <img src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                            <img data-src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
                                         <?endif;?>
                                         <?if($fast_view_text_tmp = CNext::GetFrontParametrValue('EXPRESSION_FOR_FAST_VIEW'))
                                             $fast_view_text = $fast_view_text_tmp;
@@ -382,12 +384,12 @@ global $arrFilterCollectionCustom;?>
                                         $a_title = ($arItem["PREVIEW_PICTURE"] && strlen($arItem["PREVIEW_PICTURE"]['DESCRIPTION']) ? $arItem["PREVIEW_PICTURE"]['DESCRIPTION'] : ($arItem["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_TITLE"] ? $arItem["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_TITLE"] : $arItem["NAME"] ));
                                         ?>
                                         <?if( !empty($arItem["PREVIEW_PICTURE"]) ):?>
-                                            <img data-src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" src="<?=SITE_TEMPLATE_PATH?>/images/bg-white.png" class="js-lazy__static" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                            <img data-src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
                                         <?elseif( !empty($arItem["DETAIL_PICTURE"])):?>
                                             <?$img = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"], array( "width" => 170, "height" => 170 ), BX_RESIZE_IMAGE_PROPORTIONAL,true );?>
-                                            <img data-src="<?=$img["src"]?>" alt="<?=$a_alt;?>" src="<?=SITE_TEMPLATE_PATH?>/images/bg-white.png" class="js-lazy__static" title="<?=$a_title;?>" />
+                                            <img data-src="<?=$img["src"]?>" alt="<?=$a_alt;?>" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" title="<?=$a_title;?>" />
                                         <?else:?>
-                                            <img src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                            <img data-src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
                                         <?endif;?>
                                         <?if($fast_view_text_tmp = CNext::GetFrontParametrValue('EXPRESSION_FOR_FAST_VIEW'))
                                             $fast_view_text = $fast_view_text_tmp;
@@ -403,23 +405,23 @@ global $arrFilterCollectionCustom;?>
 									<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="dark_link"><span><?=$elementName;?></span></a>
 								</div>
 								<?if($arParams["SHOW_RATING"] == "Y"):?>
-									<div class="rating">
-										<?$APPLICATION->IncludeComponent(
-										   "bitrix:iblock.vote",
-										   "element_rating_front",
-										   Array(
-											  "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-											  "IBLOCK_ID" => $arItem["IBLOCK_ID"],
-											  "ELEMENT_ID" =>$arItem["ID"],
-											  "MAX_VOTE" => 5,
-											  "VOTE_NAMES" => array(),
-											  "CACHE_TYPE" => $arParams["CACHE_TYPE"],
-											  "CACHE_TIME" => $arParams["CACHE_TIME"],
-											  "DISPLAY_AS_RATING" => 'vote_avg'
-										   ),
-										   $component, array("HIDE_ICONS" =>"Y")
-										);?>
-									</div>
+                                    <div class="rating">
+                                        <?$APPLICATION->IncludeComponent(
+                                            "bitrix:iblock.vote",
+                                            "element_rating_front",
+                                            Array(
+                                                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                                                "IBLOCK_ID" => $arItem["IBLOCK_ID"],
+                                                "ELEMENT_ID" =>$arItem["ID"],
+                                                "MAX_VOTE" => 5,
+                                                "VOTE_NAMES" => array(),
+                                                "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                                                "CACHE_TIME" => $arParams["CACHE_TIME"],
+                                                "DISPLAY_AS_RATING" => 'vote_avg'
+                                            ),
+                                            $component, array("HIDE_ICONS" =>"Y")
+                                        );?>
+                                    </div>
 								<?endif;?>
 								<div class="sa_block">
 									<?=$arQuantityData["HTML"];?>
@@ -631,7 +633,15 @@ global $arrFilterCollectionCustom;?>
 		<div class="wrap_nav">
 	<?}?>
 	<div class="bottom_nav <?=$arParams["DISPLAY_TYPE"];?>" <?=($arParams["AJAX_REQUEST"]=="Y" ? "style='display: none; '" : "");?>>
-		<?if( $arParams["DISPLAY_BOTTOM_PAGER"] == "Y" ){?><?=$arResult["NAV_STRING"]?><?}?>
+		<?if( $arParams["DISPLAY_BOTTOM_PAGER"] == "Y" ): ?>
+		    <?=$arResult["NAV_STRING"]?>
+            <?php
+                global $USER;
+                if($USER->GetID() == 440) {
+
+                }
+            ?>
+        <? endif ?>
 	</div>
 	<?if($arParams["AJAX_REQUEST"]=="Y"){?>
 		</div>

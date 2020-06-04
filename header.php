@@ -23,7 +23,7 @@ $bIncludedModule = (\Bitrix\Main\Loader::includeModule("aspro.next"));?>
 ?>
 	<!-- Web Of Trust -->
 	<meta name="wot-verification" content="4c56b0b0c6a62c8c42e1"/>
-
+    <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/blazy.min.js"></script>
 	<!-- googletagmanager.com -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -31,9 +31,9 @@ $bIncludedModule = (\Bitrix\Main\Loader::includeModule("aspro.next"));?>
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-TJ2WVH4');
 	</script>
-	<meta name="google-site-verification" content="kZ0NVBESEMnKoLQKCNL2litXLIHZNP3pMZaGW76-IlI" />
-</head>
 
+	<meta name="google-site-verification" content="kZ0NVBESEMnKoLQKCNL2litXLIHZNP3pMZaGW76-IlI" />
+    </head>
 <body class="<?=($bIncludedModule ? "fill_bg_".strtolower(CNext::GetFrontParametrValue("SHOW_BG_BLOCK")) : "");?>" id="main">
     <!-- <div id="white-curtain">Загрузка...</div> -->		<!-- ??? -->
 	<div id="panel">	<?$APPLICATION->ShowPanel();?>	</div>	<!-- показывает админ панель Битрикса -->

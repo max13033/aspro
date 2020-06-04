@@ -1,9 +1,8 @@
 <script type="text/javascript">
-    window.onload = function() {
-        ym(50944787, 'reachGoal', 'ZAGRUZKA_DETALNOJ_TOVARA')
-    }
+    // window.onload = function() {
+    //     ym(50944787, 'reachGoal', 'ZAGRUZKA_DETALNOJ_TOVARA')
+    // }
 </script>
-
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 <?$this->setFrameMode(true);?>
 <?

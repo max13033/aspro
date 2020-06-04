@@ -24,7 +24,7 @@ $(document).ready(function(){
 			}
 			config.start = function(slider){
 				checkNavColor(slider);
-				
+
 				if(slider.count <= 1){
 					slider.find('.flex-direction-nav li').addClass('flex-disabled');
 				}

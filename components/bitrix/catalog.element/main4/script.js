@@ -71,6 +71,7 @@ function setNewHeader(){
 $(document).ready(function (){
 
 	//change fixed header
+	var bLazy = Blazy();
 	if(arNextOptions['THEME']['SHOW_HEADER_GOODS'] == 'Y')
 		$('#headerfixed .logo-row').addClass('wproduct');
 
@@ -100,7 +101,7 @@ $(document).ready(function (){
 			offset = $('.middle_info').offset().top;
 		else
 			offset = $('.tabs_section').offset().top;
-			
+
 		$('body, html').animate({scrollTop: offset}, 500);
 	})
 

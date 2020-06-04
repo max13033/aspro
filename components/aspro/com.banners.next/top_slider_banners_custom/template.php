@@ -5,7 +5,7 @@
 	$bHideOnNarrow = $arTheme['BIGBANNER_HIDEONNARROW']['VALUE'] === 'Y';
 	$bannerHeight = intval($arParams['BANNER_HEIGHT'])?>
 	<div class="top_slider_wrapp maxwidth-banner<?=($bHideOnNarrow ? ' hidden_narrow' : '')?>">
-		<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.flexslider-min.js',true)?> 
+		<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.flexslider-min.js',true)?>
 		<div class="flexslider">
 			<ul class="slides">
 				<?foreach($arResult["ITEMS"] as $arItem):?>
@@ -28,7 +28,7 @@
 							<a class="target" href="<?=$arItem["PROPERTIES"]["URL_STRING"]["VALUE"]?>" <?=(strlen($target) ? 'target="'.$target.'"' : '')?>></a>
 						<?endif;?>
 						<div class="wrapper_inner">	
-							<? 
+							<?
 							$position = "0% 100%";
 							if($arItem["PROPERTIES"]["TEXT_POSITION"]["VALUE_XML_ID"])
 							{
@@ -37,7 +37,7 @@
 								elseif($arItem["PROPERTIES"]["TEXT_POSITION"]["VALUE_XML_ID"] == "right")
 									$position = "0% 100%";
 								else
-									$position = "center center";									
+									$position = "center center";
 							}
 							?>
 							<table class="table-no-border">

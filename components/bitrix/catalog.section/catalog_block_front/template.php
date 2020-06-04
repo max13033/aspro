@@ -1,11 +1,16 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?$this->setFrameMode(true);?>
-<?if( count( $arResult["ITEMS"] ) >= 1 ){?>
+<script>
+    var bLazy = new Blazy();
+</script>
+<?if( count( $arResult["ITEMS"] ) >= 1 ){
+    ?>
 	<div class="top_wrapper items_wrapper">
 		<div class="fast_view_params" data-params="<?=urlencode(serialize($arTransferParams));?>"></div>
 		<div class="catalog_block items row margin0">
 		<?foreach($arResult["ITEMS"] as $arItem){?>
-			<?$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
+			<?
+            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BCS_ELEMENT_DELETE_CONFIRM')));
 
 			$totalCount = CNext::GetTotalCount($arItem, $arParams);
@@ -75,12 +80,12 @@
 								?>
 								<?if( !empty($arItem["PREVIEW_PICTURE"]) ):?>
                                     <?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array( "width" => 170, "height" => 170 ), BX_RESIZE_IMAGE_PROPORTIONAL,true );?>
-									<img class="js-lazy__static noborder" src="<?=SITE_TEMPLATE_PATH?>/images/bg-white.png" data-src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+									<img class="js-lazy__static noborder b-lazy" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" data-src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
 								<?elseif( !empty($arItem["DETAIL_PICTURE"])):?>
 									<?$img = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"], array( "width" => 170, "height" => 170 ), BX_RESIZE_IMAGE_PROPORTIONAL,true );?>
-									<img class="js-lazy__static noborder" src="<?=SITE_TEMPLATE_PATH?>/images/bg-white.png" data-src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+									<img class="js-lazy__static noborder b-lazy" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" data-src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
 								<?else:?>
-									<img class="js-lazy__static noborder" src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" data-src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+									<img class="js-lazy__static noborder b-lazy" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" data-src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
 								<?endif;?>
 								<?if($fast_view_text_tmp = CNext::GetFrontParametrValue('EXPRESSION_FOR_FAST_VIEW'))
 									$fast_view_text = $fast_view_text_tmp;
@@ -93,7 +98,9 @@
 							<div class="item-title">
 								<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="dark_link"><span><?=$elementName;?></span></a>
 							</div>
-							<?if($arParams["SHOW_RATING"] == "Y"):?>
+							<?
+                            $arParams["SHOW_RATING"] = 'N';
+                            if($arParams["SHOW_RATING"] == "Y"):?>
 								<div class="rating">
 									<?$APPLICATION->IncludeComponent(
 									   "bitrix:iblock.vote",

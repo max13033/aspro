@@ -1,4 +1,5 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+?>
 <? $this->setFrameMode( true ); ?>
 <?
 $sliderID  = "specials_slider_wrapp_".$this->randString();
@@ -65,12 +66,12 @@ $arNotify = unserialize($notifyOption);
 					$a_title = ($arItem["PREVIEW_PICTURE"] && strlen($arItem["PREVIEW_PICTURE"]['DESCRIPTION']) ? $arItem["PREVIEW_PICTURE"]['DESCRIPTION'] : ($arItem["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_TITLE"] ? $arItem["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_TITLE"] : $arItem["NAME"] ));
 					?>
 					<?if(!empty($arItem["PREVIEW_PICTURE"])):?>
-						<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+						<img data-src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
 					<?elseif(!empty($arItem["DETAIL_PICTURE"])):?>
 						<?$img = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"], array("width" => 170, "height" => 170), BX_RESIZE_IMAGE_PROPORTIONAL, true );?>
-						<img src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+						<img data-src="<?=$img["src"]?>" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
 					<?else:?>
-						<img src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+						<img data-src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif" class="b-lazy" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
 					<?endif;?>
 					<?if($fast_view_text_tmp = CNext::GetFrontParametrValue('EXPRESSION_FOR_FAST_VIEW'))
 						$fast_view_text = $fast_view_text_tmp;

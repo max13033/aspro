@@ -1,6 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 global $mobileDetectedIO;
 ?>
+<script>
+    var bLazy = new Blazy();
+</script>
 <? $this->setFrameMode( true );?>
 <?if($arResult['SECTIONS']):
 //    pr($arResult['SECTIONS']);
@@ -28,9 +31,9 @@ global $mobileDetectedIO;
 									<?$img = CFile::ResizeImageGet($arSection["PICTURE"]["ID"], array( "width" => 120, "height" => 120 ), BX_RESIZE_IMAGE_EXACT, true );?>
 									<a href="<?=$arSection["SECTION_PAGE_URL"]?>" class="thumb">
                                         <img
-                                                class="js-lazyload-popular-catalog"
+                                                class="js-lazyload-popular-catalog b-lazy"
                                                 data-src="<?=$img["src"]?>"
-                                                src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png"
+                                                src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif"
                                                 alt="<?=($arSection["PICTURE"]["ALT"] ? $arSection["PICTURE"]["ALT"] : $arSection["NAME"])?>"
                                                 title="<?=($arSection["PICTURE"]["TITLE"] ? $arSection["PICTURE"]["TITLE"] : $arSection["NAME"])?>" />
                                     </a>
@@ -38,9 +41,9 @@ global $mobileDetectedIO;
 									<?$img = CFile::ResizeImageGet($arSection["~PICTURE"], array( "width" => 120, "height" => 120 ), BX_RESIZE_IMAGE_EXACT, true );?>
 									<a href="<?=$arSection["SECTION_PAGE_URL"]?>" class="thumb">
                                         <img
-                                                class="js-lazyload-popular-catalog"
+                                                class="js-lazyload-popular-catalog b-lazy"
                                                 data-src="<?=$img["src"]?>"
-                                                src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png"
+                                                src="<?=SITE_TEMPLATE_PATH?>/images/lazy_load.gif"
                                                 alt="<?=($arSection["PICTURE"]["ALT"] ? $arSection["PICTURE"]["ALT"] : $arSection["NAME"])?>"
                                                 title="<?=($arSection["PICTURE"]["TITLE"] ? $arSection["PICTURE"]["TITLE"] : $arSection["NAME"])?>" />
                                     </a>
